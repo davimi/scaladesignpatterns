@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %level %logger - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="logging" level="DEBUG"/> <!-- in specific classes / packages levels can be lower than root-->
+    <logger name="logging.OtherLogger" level="ERROR"/>
+
+    <root level="INFO">  <!-- if in general, logging level is lower than this level, it will not log-->
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
